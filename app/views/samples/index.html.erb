@@ -1,7 +1,7 @@
 <h1>Welcome!</h1>
 <p>The actual date and time is:</p>
-
-<p><%= Time.now %></p>
+<% t = Time.now %>
+<p><%= t = t.getlocal("-05:00")  %></p>
 
 <%= link_to "Refresh", root_path %>
 <p>Please click on refresh if you wish to update date and time.</p>
