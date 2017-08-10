@@ -1,0 +1,148 @@
+<h1>String Interpolation</h1>
+
+	<p>Example:</p>
+	<strong>
+		<p>name = "Ada"<br>
+		puts "Hello, #{name}!"</p>
+	</strong>
+
+	<p>Using this syntax everything between the opening #{ and closing } bits is evaluated as Ruby code, and the result of this evaluation will be embedded into the string surrounding it.</p>
+
+	<p>In other words, when Ruby finds #{name} in this string, then it will evaluate the piece of Ruby code name. It finds that this is a variable, so it returns the value of the variable, which is the string "Ada". So it embeds it into the surrounding string "Hello, #{name}!", by replacing #{name}.
+	<br><br>
+	String interpolation only works with double quotes.
+	</p>
+
+	<p>That means that:</p>
+
+	<strong>
+		<p>puts "Interpolation works in double quoted strings: #{1 + 2}."<br>
+		puts 'And it does not work in single quoted strings: #{1 + 2}.'</p>
+	</strong>
+
+	<p>will print out:</p>
+	<strong>
+		<p>Interpolation works in double quoted strings: 3. <br>
+		And it does not work in single quoted strings: #{1 + 2}.</p>
+	</strong>
+	<p>If you type the code above in your editor, and syntax highlighting for Ruby code is used, it should highlight the code in the double quoted string, so it gives you a visual clue about the interpolation.</p>
+
+<h1>Array Declaration and adding an element at the end of the array</h1>
+
+	<h2>Declaration</h2>
+
+		<p>
+		A new array can be created by using the literal constructor []. Arrays can contain different types of objects. For example, the array below contains an Integer, a String and a Float:</p>
+
+		<strong>
+			<p>ary = [1, "two", 3.0] #=> [1, "two", 3.0]</p>
+		</strong>
+		<p>
+		An array can also be created by explicitly calling ::new with zero, one (the initial size of the Array) or two arguments (the initial size and a default object).
+		</p>
+		<strong>
+		<p>
+		ary = Array.new    #=> [] <br>
+		Array.new(3)       #=> [nil, nil, nil] <br>
+		Array.new(3, true) #=> [true, true, true] <br>
+		</p>
+		</strong>
+
+		<p>you can also use</p>
+		<strong>
+			<p>array = %W(juice eggs bread) #=> [juice, eggs, bread] </p>
+		</strong>
+		<p>this creates an array with commas where there are spaces.</p>
+
+	<h2>Adding an element at the end of the array</h2>
+		<p>Items can be added to the end of an array by using either push or << </p>
+		<strong>
+			<p>
+			arr = [1, 2, 3, 4] <br>
+			arr.push(5) #=> [1, 2, 3, 4, 5] <br>
+			arr << 6    #=> [1, 2, 3, 4, 5, 6] <br>
+			</p>
+		</strong>
+<h1>Array iteration using each command</h1>
+
+	<h3>each { |item| block } → ary <br>
+	each → Enumerator </h3>
+
+		<p>Calls the given block once for each element in self, passing that element as a parameter.</p>
+
+		<p>An Enumerator is returned if no block is given.</p>
+		<strong>
+			<p>
+			a = [ "a", "b", "c" ] <br>
+			a.each {|x| print x, " -- " } <br>
+			</p>
+		</strong>
+		<p>produces:</p>
+		<strong>
+			<p>
+				a -- b -- c --
+			</p>
+		</strong>
+
+	<h3>each_index { |index| block } → ary
+	each_index → Enumerator</h3>
+
+		<p>
+			Same as #each, but passes the index of the element instead of the element itself.
+		</p>
+		<p>An Enumerator is returned if no block is given.</p>
+		<strong>
+			<p>
+				a = [ "a", "b", "c" ] <br>
+				a.each_index {|x| print x, " -- " }
+			</p>
+		</strong>
+
+		<p>produces:</p>
+
+		<strong>
+			<p>0 -- 1 -- 2 --</p>
+		</strong>
+		<p>Example for adding the elements of an array</p>
+		<strong>
+			<p>
+			nums = [1,2,3,4] <br><br>
+			nums.each do |num| <br>
+			sum = num + sum <br>
+			end <br>
+			</p>
+			<p>sum #=> 10</p>
+		</strong>
+<h1>Hash Declaration</h1>
+	<p>A Hash is a dictionary-like collection of unique keys and their values. Also called associative arrays, they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type.
+	</p>
+	<p>Hashes enumerate their values in the order that the corresponding keys were inserted.</p>
+	<p>A Hash can be easily created by using its implicit form:</p>
+	<strong>
+		<p>
+			grades = { "Jane Doe" => 10, "Jim Doe" => 6 }
+		</p>
+	</strong>
+	<p>Hashes allow an alternate syntax for keys that are symbols. Instead of</p>
+	<strong>
+		<p>
+			options = { :font_size => 10, :font_family => "Arial" }
+		</p>
+	</strong>
+	<p>You could write it as:</p>
+	<strong>
+		<p>
+			options = { font_size: 10, font_family: "Arial" }
+		</p>
+	</strong>
+	<p>A Hash can also be created through its ::new method:</p>
+	<strong>
+		<p>
+			grades = Hash.new <br>
+			grades["Dorothy Doe"] = 9
+		</p>
+	</strong>
+		<%= link_to "Home", root_path %>
+
+
+

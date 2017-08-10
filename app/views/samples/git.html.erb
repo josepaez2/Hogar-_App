@@ -1,0 +1,53 @@
+<h1>Initializing a new git repository in an existing app</h1>
+	<p>The command for initializing you new repository is:</p>
+	<strong>
+		<p>
+			git init 
+		</p>
+	</strong>
+<h1>Creating a new branch</h1>
+	<h3>Creating a branch with branch</h3>
+		<p>When using the branch command you create the branch but you don't move inside that branch, you use tha command:</p>
+		<strong>
+			<p>
+				git branch rama1
+			</p>
+		</strong>
+	<h3>Creating a branch with checkout</h3>
+		<p>When using the checkout command you create the branch and you move inside that branch, you use tha command:</p>
+		<strong>
+			<p>
+				git checkout -b "r1" 
+			</p>
+		</strong>
+<h1>Making a commit including all of the actual changes</h1>
+	<h3>Basic Git Workflow</h3>
+		<p>The basic Git workflow goes something like this:</p>
+		<ol>
+			<li>You modify files in your working tree.</li>
+			<li>You stage the files, adding snapshots of them to your staging area.</li>
+			<li>You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.</li>
+		</ol>
+	<h3>Commit</h3>
+		<p>When you want to save all the changes done in the working directory which have already been passed to staging area you use the commit command. The command is: </p>
+		<strong>
+			<p>
+				git commit -m "first commit"
+			</p>
+		</strong>
+		<p>This commmand allows a message therefore the m and a string with your message which usually describes the changes made </p>
+<h1>Sending the code to the remote repository</h1>
+		<p>When you want to send your code to your remote repository you use the command:</p>
+		<strong>
+			<p>
+				git push origin master
+			</p>
+		</strong>
+		<p>That is of course if your remote repository was named origin which is a good practice.</p>
+		<p>You can checkout your remote branches with the command:</p>
+		<strong>
+			<p>
+				git remote -v
+			</p>
+		</strong>
+		<%= link_to "Home", root_path %>
